@@ -50,6 +50,16 @@ const PromptCard = ({ post, handelTagClick, handelEdit, handelDelete }) => {
         <p className=' font-inter text-sm blue_gradient '
           onClick={() => { handelTagClick && handelTagClick(post.tag) }}
         >{post.tag}</p>
+        {session?.user.id === post.creator.id && pathName === '/profile' && (
+          <p className=' font-inter text-sm green_gradient cusrsor-pointer'
+            onClick={handelEdit}
+
+          >
+            Edit
+          </p>
+
+        )}
+
       </div>
     </div>
   );
