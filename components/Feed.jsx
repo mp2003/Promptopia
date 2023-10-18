@@ -2,6 +2,10 @@
 import React, { useState, useEffect } from 'react';
 import PromptCard from './PromptCard';
 
+
+// PromptCardList
+
+
 const PromptCardList = ({ data, handelTagClick }) => {
   return (
     <div className='mt-16 prompt_layout'>

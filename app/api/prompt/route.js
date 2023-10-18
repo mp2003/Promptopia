@@ -13,4 +13,4 @@ export const GET = async (request) => {
         return new Response("failed to connect to database", { status: 500 })
     }
 
-}
+}<<
