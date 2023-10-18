@@ -2,9 +2,17 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { useSession } from 'next-auth/react';
+import { usePathname, useRouter } from 'next/navigation';
+
 
 const PromptCard = ({ post, handelTagClick, handelEdit, handelDelete }) => {
   const [copied, setCopied] = useState("");
+  const { data: session } = useSession();
+  const pathName = usePathname();
+  const router = useRouter();
+
+
 
   const handelCopy = (prompt) => {
     setCopied(prompt);
@@ -50,14 +58,20 @@ const PromptCard = ({ post, handelTagClick, handelEdit, handelDelete }) => {
         <p className=' font-inter text-sm blue_gradient '
           onClick={() => { handelTagClick && handelTagClick(post.tag) }}
         >{post.tag}</p>
-        {session?.user.id === post.creator.id && pathName === '/profile' && (
-          <p className=' font-inter text-sm green_gradient cusrsor-pointer'
-            onClick={handelEdit}
+        {session?.user.id === post.creator._id && pathName === '/profile' && (
+          <div className='mt-5 flex-center gap-4 border-t border-gray-100 pt-3'>
+            <p className=' font-inter text-sm green_gradient cusrsor-pointer'
+              onClick={handelEdit}
+            >
+              Edit
+            </p>
+            <p className=' font-inter text-sm orange_gradient cusrsor-pointer'
+              onClick={handelDelete}
+            >
+              Delete
+            </p>
 
-          >
-            Edit
-          </p>
-
+          </div>
         )}
 
       </div>
