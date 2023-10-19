@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Component, useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
 import Form from "@components/Form";
@@ -51,7 +51,7 @@ const UpdatePrompt = () => {
             setIsSubmitting(false);
         }
     };
-
+    // form Component
     return (
         <Form
             type='Edit'
