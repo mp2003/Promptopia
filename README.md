@@ -2,6 +2,8 @@
 
 Welcome to Promptopia, your go-to application for generating AI prompts effortlessly! This project is built with Next.js and styled with Tailwind CSS.
 
+![Promptopia Screenshot](./public/assets/images/Screenshot%20from%202023-10-19%2008-57-10.png)
+
 ## Getting Started
 
 These instructions will help you set up and run the project on your local machine.
